@@ -1,0 +1,15 @@
+.Image {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 900px) {
+  .Image  {
+    object-fit: cover !important; 
+    height: 120px !important;
+    color: green !important;
+  } 
+}

@@ -1,0 +1,13 @@
+.Componenet {
+    display: flex;
+    margin: 55px 130px 0 130px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1200px) {
+    .Componenet {
+    overflow: overlay;
+    margin: 0px;    
+    }
+}
