@@ -8,18 +8,6 @@ import LoginDialog from "../Login/LoginDialog";
 import DataContext from "../../context/DataContext";
 import Profile from "./Profile";
 
-const Wrapper = styled(Box)`
-  display: flex;
-  margin: 0 3% 0 auto;
-  & > * {
-    margin-right: 40px !important;
-    font-size: 16px;
-    align-items: center;
-  }
-`;
-const CartContainer = styled(Box)`
-  display: flex;
-`;
 const LoginButton = styled(Button)`
   color: #2874f0;
   background: #fff;
@@ -40,7 +28,7 @@ const CustomButtons = () => {
     setOpen(true);
   };
   return (
-    <Wrapper>
+    <Box className="Wrapper">
       {userAccount ? (
         <Profile userAccount={userAccount} setAcoount={setAccount} />
       ) : (
@@ -53,12 +41,12 @@ const CustomButtons = () => {
         Become a Seller
       </Typography>
       <Typography style={{ margintop: 3, display: "flex" }}>More</Typography>
-      <CartContainer>
+      <Box className="CartContainer">
         <ShoppingCartIcon />
         <Typography>Cart</Typography>
-      </CartContainer>
+      </Box>
       <LoginDialog open={open} setOpen={setOpen} />
-    </Wrapper>
+    </Box>
   );
 };
 

@@ -1,7 +1,6 @@
 import { Box, styled } from "@mui/material";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ThemeProvider } from "@mui/material/styles";
 
 //components
 import NavBar from "./NavBar";

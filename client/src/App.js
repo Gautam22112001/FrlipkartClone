@@ -3,21 +3,31 @@ import { Box } from "@mui/material";
 //Components
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
+import DetailVew from "./Components/Details/DetailVew";
 
 //contexAPI
 import DataProvider from "./context/DataProvider";
 
+//Add routing to app.js
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
     <DataProvider>
-      <Header />
-      <Box style={{ marginTop: 55 }}>
-        {" "}
-        //#region Why Box Explained:
-        {/* this Box and margin was required because the header had position fixed thus all the content after the header was going under it thus applied margin to the div equivalent of the height of the header */}
-        //#endregion
-        <Home />
-      </Box>
+      <BrowserRouter>
+        <Header />
+        <Box style={{ marginTop: 55 }}>
+          {" "}
+          <>
+            {/* this Box and margin was required because the header had position fixed thus all the content after the header was going under it thus applied margin to the div equivalent of the height of the header */}
+          </>
+          <Routes>
+            <Route path="/" element={<Home />} />
+
+            <Route path="/product/:id" element={<DetailVew />} />
+          </Routes>
+        </Box>
+      </BrowserRouter>
     </DataProvider>
   );
 }

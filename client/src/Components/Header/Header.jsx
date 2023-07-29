@@ -1,18 +1,33 @@
-import React from "react";
-import { AppBar, Box, Toolbar, Typography, styled } from "@mui/material";
+import React, { useState } from "react";
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  Typography,
+  styled,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+} from "@mui/material";
+import { Link } from "react-router-dom";
+import MenuIcon from "@mui/icons-material/Menu";
 
 //components
 import Search from "./Search";
 import CustomButtons from "./CustomButtons";
+import "./Header.css";
 
 const StyledHeader = styled(AppBar)`
   background: #2874f0;
   height: 55px;
 `;
 
-const BoxComponent = styled(Box)`
+const BoxComponent = styled(Link)`
   margin-left: 12%;
   line-height: 0;
+  text-decoration: none;
+  color: inherit;
 `;
 
 const SubHeading = styled(Typography)`
@@ -26,10 +41,6 @@ const PlusImage = styled("img")({
   marginLeft: 4,
 });
 
-const CustomButtonWrapper = styled(Box)`  
-  margin: 0 5% 0 auto;
-`;
-
 const Header = () => {
   const logoURL =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png";
@@ -37,10 +48,38 @@ const Header = () => {
   const subURL =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
 
+  const [openHeader, setOpenHeader] = useState(false);
+
+  const handleOpen = () => {
+    setOpenHeader(true);
+  };
+
+  const handleClose = () => {
+    setOpenHeader(false);
+  };
+
+  const list = () => {
+    return (
+      <Box style={{ width: 200 }} onClick={handleClose}>
+        <List>
+          <ListItem button>
+            <CustomButtons />
+          </ListItem>
+        </List>
+      </Box>
+    );
+  };
+
   return (
     <StyledHeader>
-      <Toolbar style={{minHeight: 55}}>
-        <BoxComponent>
+      <Toolbar style={{ minHeight: 55 }}>
+        <IconButton color="inherit" className="menuIcon" onClick={handleOpen}>
+          <MenuIcon />
+        </IconButton>
+        <Drawer open={openHeader} onClose={handleClose}>
+          {list()}
+        </Drawer>
+        <BoxComponent to={"/"}>
           <img src={logoURL} alt="Logo" style={{ width: 75 }} />
           <Box style={{ display: "flex" }}>
             <SubHeading>
@@ -53,9 +92,9 @@ const Header = () => {
           </Box>
         </BoxComponent>
         <Search />
-        <CustomButtonWrapper>
-          <CustomButtons/>
-        </CustomButtonWrapper>
+        <Box className="CustomButtonWrapper">
+          <CustomButtons />
+        </Box>
       </Toolbar>
     </StyledHeader>
   );

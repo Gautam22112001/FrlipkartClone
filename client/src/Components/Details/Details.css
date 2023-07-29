@@ -1,0 +1,60 @@
+
+/* DETAILVIEW.JSX */
+.Container{
+    background: #ffffff;
+    display: flex;
+}
+
+/* .productDetails{
+
+} */
+
+@media screen and (max-width: 900px) {
+    .Container {
+        margin: 0;
+    }
+    .details{
+        margin: 0 40px;
+        /* background-color: black; */
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .details {
+            margin: 0 10px;
+            /* background-color: black; */
+        }
+}
+
+/* ACTIONITEM.JSX */
+
+.LeftContainer{
+    min-width: 40%;
+    padding: 40px 0 0 80px;}
+
+
+
+.StyledButton{
+    width: 48%;
+    height: 50px;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 1200px) {
+    .LeftContainer {
+        padding: 20px 40px;
+        /* background-color: black; */
+    }
+
+    .StyledButton{
+        width: 46%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .StyledButton{
+        width: 48%;
+    }
+}

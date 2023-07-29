@@ -1,0 +1,54 @@
+.CustomButtonWrapper{
+    margin: 0 5% 0 auto;
+}
+
+.menuIcon{
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .CustomButtonWrapper {
+       display: none;
+    }
+
+    .menuIcon{
+        display: block;
+    }
+}
+
+/* CustomButton.jsx */
+/* const Wrapper=styled(Box)` display: flex;
+margin: 0 3% 0 auto;
+
+&>* {
+    margin-right: 40px !important;
+    font-size: 16px;
+    align-items: center;
+}
+
+`; */
+
+.Wrapper{
+    display: flex;
+    margin: 0 3% 0 auto;
+}
+
+.Wrapper>*{
+    margin-right: 40px;
+    font-size: 16px;
+    align-items: center;
+}
+
+.CartContainer{
+    display: flex;
+}
+
+@media screen and (max-width: 900px) {
+    .CartContainer {
+            display: block;
+        }
+    
+    .Wrapper {
+            display: block;
+    }
+}
