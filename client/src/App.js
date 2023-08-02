@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import Header from "./Components/Header/Header";
 import Home from "./Components/Home/Home";
 import DetailVew from "./Components/Details/DetailVew";
+import Cart from "./Components/Cart/Cart";
 
 //contexAPI
 import DataProvider from "./context/DataProvider";
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             <Route path="/product/:id" element={<DetailVew />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
         </Box>
       </BrowserRouter>

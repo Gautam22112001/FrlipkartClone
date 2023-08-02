@@ -19,3 +19,12 @@ export const authenticateLogin = async (data) => {
     // now in logindialogBox when login will be failed error.response will be returned whereas in earlier case without this retrn statement nothing was returned
   }
 };
+
+export const paywWithPaytm = async (data) => {
+  try {
+    let response = await axios.post(`${URL}/payment`, data);
+    return response.data;
+  } catch (error) {
+    console.log("error while calling payment gateway", error);
+  }
+};

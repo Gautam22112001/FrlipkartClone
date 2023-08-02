@@ -29,6 +29,8 @@
 
 .CartContainer{
     display: flex;
+    text-decoration: none;
+    color: inherit;
 }
 
 @media screen and (max-width: 900px) {
